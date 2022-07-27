@@ -1,0 +1,164 @@
+#define _CRT_SECURE_NO_WARNINGS 1//尽量开头引用，防止出错
+#include <stdio.h>//引用数据库函数
+void bubble_sort(int arr[], int sz)
+{
+	int i = 0;
+	int flag = 1;
+	for (i = 0; i < sz - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			int tmp = 0;
+			if (arr[j] > arr[j + 1])
+			{
+				tmp=arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+				flag = -1;
+			}
+		}
+		if (flag == 1)
+		{
+			break;
+		}
+	}
+	
+}
+int main()
+{
+	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	bubble_sort(arr,sz);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+}
+//int jiecheng(int x)
+//{
+//	if (x != 0)
+//	{
+//		return x * jiecheng(x - 1);
+//	}
+//	else
+//		return 1;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	ret=jiecheng(n);
+//	printf("%d", ret);
+//	return 0;
+//}
+
+//int my_len(char* str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+////}
+//int my_len(char* str)
+//{
+//	if (*str != '\0')
+//	{
+//		return 1 + my_len(str + 1);
+//	}
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[] = "123489";
+//	int len = my_len(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}
+//void  print(int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%d", &num);
+//	print(num);
+//	return 0;
+//}
+//int is_run_year(int x)
+//{
+//	if ((x % 4 == 0 && x % 100 != 0) || (x % 400 == 0))
+//		return 1;
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	int year = 0;
+//	for (year = 1000; year <= 2000; year++)
+//	{
+//		if (is_run_year(year) == 1)
+//		{
+//			printf("%d\n", year);
+//		}
+//	}
+//	return 0;
+//}
+////int Pd(int x)
+////{
+//	int b = 0;
+//	int c = 0;
+//	for (b = 2; b < x; b++)
+//	{
+//		if (x % b == 0)
+//		{
+//			c = 1;
+//			break;
+//		}
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	printf("输出1，不是，输出0，是\n");
+//	int a = 0;
+//	scanf("%d", &a);
+//	int b = Pd(a);
+//	printf("%d", b);
+//	return 0;
+//}
+////int main()
+//{
+//	char arr[] = "hellow world";
+//	memset(arr, '#', 5);
+//	printf("%s", arr);
+//	return 0;
+//}
+//int Swap(int* pa, int* pb)
+//{
+//	int tmp = 0;
+//	tmp = *pa;
+//	*pa = *pb;
+//	*pb = tmp;
+//}
+//int main()
+//{
+//	int a = 20;
+//	int b = 23;
+//	printf("a=%d,n=%d\n", a, b);
+//	Swap(&a, &b);
+//	printf("a=%d,b=%d\n", a, b);
+//	return 0;
+//}
